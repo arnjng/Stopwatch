@@ -1,0 +1,42 @@
+body{
+    
+    background-color: rgb(52, 170, 199);
+    font-size: 100pt;
+    text-align: center;
+    margin-top: 50pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    align-self: center;
+
+}
+
+p{
+
+    background-color: rgb(179, 223, 194);
+    
+    border-radius: 5pt;
+    border: 1pt solid;
+    border-color: rgb(53, 52, 52);
+
+    width: 700pt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50pt;
+
+}
+
+button{
+
+    background-color: black;
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+
+    width: 200pt;
+    height: 50pt;
+
+    border: 1pt solid;
+    border-color: rgb(230, 226, 226);
+    border-radius: 5pt;
+
+}
