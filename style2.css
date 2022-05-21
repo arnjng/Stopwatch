@@ -1,0 +1,58 @@
+body{
+    
+    background-color: rgb(52, 170, 199);
+    
+    text-align: center;
+    align-self: center;
+
+    margin-top: 50pt;
+
+    font-size: 100pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+
+}
+
+a{
+
+    font-size: 50pt;
+
+    background-color: rgb(50, 117, 119);
+    color: rgb(224, 207, 47);
+
+    width: 350pt;
+
+    margin-top: 5pt;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+p{
+
+    padding-top: 50pt;
+
+    margin-top: 10pt;
+    margin: 0pt;
+
+}
+
+.plus{
+
+    background-color: green;
+    width: 50pt;
+
+    margin-left: 33pt;
+    margin-right: 33pt;
+
+}
+
+.minus{
+
+    background-color: red;
+    width: 50pt;
+
+    margin-left: 33pt;
+    margin-right: 33pt;
+
+}
