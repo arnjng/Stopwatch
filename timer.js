@@ -5,26 +5,30 @@ var seconds = "00";
 
 function hoursPlus() {
 
-    if(hours < 23){
+    if(minutes != 60 && seconds != 60){
 
-        hours++;
-        figureTestHr();
+        if(hours < 23){
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            hours++;
+            figureTestHr();
 
-    }
-    else if(hours < 24 && minutes == 00){
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
-        hours++;
+        }
+        else if(hours < 24 && minutes == 00){
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            hours++;
 
-    }
-    else{
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
-        hours = "00";
+        }
+        else{
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            hours = "00";
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+        }
 
     }
 
@@ -72,26 +76,30 @@ function secondsPlus() {
 
 function hoursMinus() {
 
-    if(hours > 0){
+    if(minutes != 60 && seconds != 60){
 
-        hours--;
-        figureTestHr();
+        if(hours > 0){
+        
+            hours--;
+            figureTestHr();
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
-    
-    }
-    else if(minutes == 0){
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        
+        }
+        else if(minutes == 0){
 
-        hours = 24;
+            hours = 24;
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
-    }
-    else{
+        }
+        else{
 
-        hours = 23;
+            hours = 23;
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+        }
 
     }
 
@@ -99,31 +107,69 @@ function hoursMinus() {
 
 function minutesMinus() {
 
-    if(minutes > 0){
+    if(seconds != 60){
 
-        minutes--;
-        figureTestMin();
+        if(minutes > 0){
+
+            minutes--;
+            figureTestMin();
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        
+        }
+        else if(hours == 24){
+
+            minutes = "00";
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+        }
+        else if(seconds == 0 && hours == 00){
+
+            minutes = 60;
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+        }
+        else{
+
+            minutes = 59;
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+        }
+
+    }   
+
+}
+
+function secondsMinus() {
+
+    if(seconds > 0){
+
+        seconds--;
+        figureTestSec();
 
         document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
     
     }
-    else if(hours == 24){
+    else if(minutes == 60){
 
-        minutes = "00";
+        seconds = "00";
 
         document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
-    else if(seconds == 0 && hours == 00){
+    else if(minutes == 0 && hours == 00){
 
-        minutes = 60;
+        seconds = 60;
 
         document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
     else{
 
-        minutes = 59;
+        seconds = 59;
 
         document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
