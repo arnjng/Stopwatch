@@ -6,12 +6,16 @@ var interval;
 
 function start(){
 
-    document.getElementById("start").innerHTML = "Running...";
-    document.getElementById("start").style.color = "grey";
-    document.getElementById("stop").style.color = "black";
+    if(minutes !=0 || seconds !=0 || hours != 0){
 
-    const interv = setInterval(timer, 1000);
-    interval = interv;
+        document.getElementById("start").innerHTML = "Running...";
+        document.getElementById("start").style.color = "rgb(30,30,30)";
+        document.getElementById("stop").style.color = "white";
+
+        const interv = setInterval(timer, 1000);
+        interval = interv;
+
+    }
 
 }
 
@@ -20,12 +24,14 @@ function stop(){
     clearInterval(interval);
 
     document.getElementById("start").innerHTML = "Resume";
-    document.getElementById("start").style.color = "black";
-    document.getElementById("stop").style.color = "grey";
+    document.getElementById("start").style.color = "white";
+    document.getElementById("stop").style.color = "rgb(30,30,30)";
 
 }
 
 function timer(){
+
+    if(hours != 0 || minutes != 0 || seconds != 0){
 
         if(seconds > 0){
 
@@ -58,9 +64,14 @@ function timer(){
 
         }
 
+    }
+
+    stopWatch();
+    // alarm();
+
 }
 
-
+//TODO: implement alarm that triggers when timer runs out
 
 function hoursPlus() {
 

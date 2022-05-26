@@ -59,12 +59,16 @@ p{
 
 .controlPanel{
 
-    font-size: 25pt;
-    font-weight: 1000;
+    border: 1pt solid;
+    border-color: rgb(230, 226, 226);
+    border-radius: 5pt;
 
     width: 200pt;
     height: 100pt;
 
-    background-color: turquoise;
+    background-color: black;
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
 
 }

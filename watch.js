@@ -111,6 +111,12 @@ function figureTestHr() {
 //stop the running stopwatch
 function startWatch() {
 
+    document.getElementById("start").innerHTML = "Running...";
+    document.getElementById("start").onclick = "";
+    document.getElementById("start").style.color = "rgb(40,40,40)";
+
+    document.getElementById("stop").style.color = "white";
+
     start = true;
     interval = watch();
     
@@ -120,6 +126,13 @@ function startWatch() {
 
 //start the stopwatch
 function stopWatch() {
+
+
+    document.getElementById("stop").style.color = "rgb(40,40,40)";
+
+    document.getElementById("start").onclick = startWatch;
+    document.getElementById("start").innerHTML = "Resume";
+    document.getElementById("start").style.color = "white";
 
     start = false;
     clearInterval(interval);
