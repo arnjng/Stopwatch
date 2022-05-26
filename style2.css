@@ -56,3 +56,15 @@ p{
     margin-right: 33pt;
 
 }
+
+.controlPanel{
+
+    font-size: 25pt;
+    font-weight: 1000;
+
+    width: 200pt;
+    height: 100pt;
+
+    background-color: turquoise;
+
+}

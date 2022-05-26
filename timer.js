@@ -2,6 +2,65 @@ var hours = "00";
 var minutes = "00";
 var seconds = "00";
 
+var interval;
+
+function start(){
+
+    document.getElementById("start").innerHTML = "Running...";
+    document.getElementById("start").style.color = "grey";
+    document.getElementById("stop").style.color = "black";
+
+    const interv = setInterval(timer, 1000);
+    interval = interv;
+
+}
+
+function stop(){
+
+    clearInterval(interval);
+
+    document.getElementById("start").innerHTML = "Resume";
+    document.getElementById("start").style.color = "black";
+    document.getElementById("stop").style.color = "grey";
+
+}
+
+function timer(){
+
+        if(seconds > 0){
+
+            seconds--;
+            figureTestSec();
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+        }
+        else if(minutes > 0){
+
+            minutes--;
+            figureTestMin();
+
+            seconds = 59;
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+
+        }
+        else if(minutes == 0){
+
+            hours--;
+            figureTestHr();
+
+            minutes = 59;
+            seconds = 59;
+
+            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+        }
+
+}
+
+
 
 function hoursPlus() {
 
@@ -36,10 +95,17 @@ function hoursPlus() {
 
 function minutesPlus() {
 
-    if(minutes < 60 && hours != 24 && seconds == 0){
+    if(minutes < 59 && hours != 24 && seconds != 60){
 
         minutes++;
         figureTestMin();
+
+        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+    }
+    else if(minutes == 59 && hours == 0 && seconds == 00){
+
+        minutes = 60;
 
         document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
