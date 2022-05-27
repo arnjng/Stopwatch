@@ -3,7 +3,7 @@
 
     <head>
 
-        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
@@ -14,6 +14,7 @@
 
         <button type="button" id="start" onclick="start()" class="controlPanel">Start</button>
         <button type="button" id="stop" onclick="stop()" class="controlPanel">Stop</button>
+        <button type="button" id="reset" onclick="reset()" class="controlPanel">Reset</button>
 
         <div>
             <button type="button" class="plus" id="hours" onclick="hoursPlus()">
@@ -26,7 +27,7 @@
                 +
             </button>
             <br>
-            <p id="clock">
+            <p id="timer">
                 00:00:00
             </p>
             <button type="button" class="minus" id="hoursM" onclick="hoursMinus()">

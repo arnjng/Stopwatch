@@ -28,7 +28,7 @@ a{
 
 }
 
-p{
+p #clock{
 
     background-color: rgba(123, 214, 153, 0.658);
     
@@ -43,18 +43,47 @@ p{
 
 }
 
-button{
+p #timer{
+
+    padding-top: 50pt;
+
+    margin-top: 10pt;
+    margin: 0pt;
+
+}
+
+.plus{
+
+    background-color: green;
+    width: 50pt;
+
+    margin-left: 33pt;
+    margin-right: 33pt;
+
+}
+
+.minus{
+
+    background-color: red;
+    width: 50pt;
+
+    margin-left: 33pt;
+    margin-right: 33pt;
+
+}
+
+.controlPanel{
+
+    border: 1pt solid;
+    border-color: rgb(230, 226, 226);
+    border-radius: 5pt;
+
+    width: 200pt;
+    height: 100pt;
 
     background-color: black;
     color: white;
     font-size: x-large;
     font-weight: bolder;
-
-    width: 200pt;
-    height: 50pt;
-
-    border: 1pt solid;
-    border-color: rgb(230, 226, 226);
-    border-radius: 5pt;
 
 }

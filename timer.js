@@ -4,13 +4,17 @@ var seconds = "00";
 
 var interval;
 
+reset();
+
 function start(){
 
     if(minutes !=0 || seconds !=0 || hours != 0){
 
         document.getElementById("start").innerHTML = "Running...";
         document.getElementById("start").style.color = "rgb(30,30,30)";
+        
         document.getElementById("stop").style.color = "white";
+        document.getElementById("stop").onclick = stop;
 
         const interv = setInterval(timer, 1000);
         interval = interv;
@@ -29,7 +33,23 @@ function stop(){
 
 }
 
-//TODO: reset function
+function reset(){
+
+    clearInterval(interval);
+
+    document.getElementById("start").innerHTML = "Start";
+    document.getElementById("start").style.color = "white";
+
+    document.getElementById("stop").style.color = "rgb(30,30,30)";
+    document.getElementById("stop").onclick = "";
+
+    seconds = "00";
+    minutes = "00";
+    hours = "00";
+
+    document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+
+}
 
 function timer(){
 
@@ -40,7 +60,7 @@ function timer(){
             seconds--;
             figureTestSec();
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
         else if(minutes > 0){
@@ -50,7 +70,7 @@ function timer(){
 
             seconds = 59;
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
 
         }
@@ -62,7 +82,7 @@ function timer(){
             minutes = 59;
             seconds = 59;
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
 
@@ -71,7 +91,7 @@ function timer(){
 
         stop();
         alarm();
-        //reset();
+        reset();
 
     }
 
@@ -93,21 +113,21 @@ function hoursPlus() {
             hours++;
             figureTestHr();
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
         else if(hours < 24 && minutes == 00){
 
             hours++;
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
         else{
 
             hours = "00";
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
 
@@ -122,21 +142,21 @@ function minutesPlus() {
         minutes++;
         figureTestMin();
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
     else if(minutes == 59 && hours == 0 && seconds == 00){
 
         minutes = 60;
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
     else{
 
         minutes = "00";
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
 
@@ -149,14 +169,14 @@ function secondsPlus() {
         seconds++;
         figureTestSec();
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
     else{
 
         seconds = "00";
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
 
@@ -171,21 +191,21 @@ function hoursMinus() {
             hours--;
             figureTestHr();
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
         
         }
         else if(minutes == 0){
 
             hours = 24;
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
         else{
 
             hours = 23;
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
 
@@ -202,28 +222,28 @@ function minutesMinus() {
             minutes--;
             figureTestMin();
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
         
         }
         else if(hours == 24){
 
             minutes = "00";
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
         else if(seconds == 0 && hours == 00){
 
             minutes = 60;
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
         else{
 
             minutes = 59;
 
-            document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+            document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
         }
 
@@ -238,28 +258,28 @@ function secondsMinus() {
         seconds--;
         figureTestSec();
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
     
     }
     else if(minutes == 60){
 
         seconds = "00";
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
     else if(minutes == 0 && hours == 00){
 
         seconds = 60;
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
     else{
 
         seconds = 59;
 
-        document.getElementById("clock").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+        document.getElementById("timer").innerHTML = hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
 
     }
 
