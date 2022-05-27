@@ -29,6 +29,8 @@ function stop(){
 
 }
 
+//TODO: reset function
+
 function timer(){
 
     if(hours != 0 || minutes != 0 || seconds != 0){
@@ -65,13 +67,22 @@ function timer(){
         }
 
     }
+    else{
 
-    stopWatch();
-    // alarm();
+        stop();
+        alarm();
+        //reset();
+
+    }
 
 }
 
-//TODO: implement alarm that triggers when timer runs out
+function alarm() {
+
+    audio = new Audio('achtarmiger.mp3');
+    audio.play();
+
+}
 
 function hoursPlus() {
 

@@ -1,7 +1,7 @@
 body{
     
-    background-color: rgb(52, 170, 199);
-    
+    background-color: rgb(88, 88, 88);
+
     text-align: center;
     align-self: center;
 
@@ -17,8 +17,8 @@ a{
 
     font-size: 50pt;
 
-    background-color: rgb(50, 117, 119);
-    color: rgb(224, 207, 47);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(175, 78, 40);
 
     width: 350pt;
 
