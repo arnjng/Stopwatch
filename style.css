@@ -5,9 +5,9 @@ body{
     text-align: center;
     align-self: center;
 
-    margin-top: 50pt;
+    margin-top: 50px;
 
-    font-size: 100pt;
+    font-size: 100px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
 
@@ -15,14 +15,14 @@ body{
 
 a{
 
-    font-size: 50pt;
+    font-size: 50px;
 
     background-color: rgba(0, 0, 0, 0);
     color: rgb(175, 78, 40);
 
-    width: 350pt;
+    width: 350px;
 
-    margin-top: 5pt;
+    margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
 
@@ -32,58 +32,71 @@ p #clock{
 
     background-color: rgba(123, 214, 153, 0.658);
     
-    border-radius: 5pt;
-    border: 1pt solid;
+    border-radius: 5px;
+    border: 1px solid;
     border-color: rgb(53, 52, 52);
 
-    width: 700pt;
+    width: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50pt;
+    margin-top: 50px;
 
 }
 
 p #timer{
 
-    padding-top: 50pt;
+    padding-top: 50px;
 
-    margin-top: 10pt;
-    margin: 0pt;
+    margin-top: 10px;
+    margin: 0px;
 
 }
 
 .plus{
 
     background-color: green;
-    width: 50pt;
+    width: 50px;
 
-    margin-left: 33pt;
-    margin-right: 33pt;
+    margin-left: 33px;
+    margin-right: 33px;
 
 }
 
 .minus{
 
     background-color: red;
-    width: 50pt;
+    width: 50px;
 
-    margin-left: 33pt;
-    margin-right: 33pt;
+    margin-left: 33px;
+    margin-right: 33px;
 
 }
 
 .controlPanel{
 
-    border: 1pt solid;
+    border: 1px solid;
     border-color: rgb(230, 226, 226);
-    border-radius: 5pt;
+    border-radius: 5px;
 
-    width: 200pt;
-    height: 100pt;
+    width: 200px;
+    height: 100px;
 
     background-color: black;
     color: white;
     font-size: x-large;
+    font-weight: bolder;
+
+}
+
+.linkPanel{
+
+    border: 1px solid;
+    border-color: rgb(230, 226, 226);
+    border-radius: 5px;
+
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 75px;
     font-weight: bolder;
 
 }
