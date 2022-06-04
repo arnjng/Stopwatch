@@ -1,11 +1,15 @@
+
+//initial variables
 var hours = "00";
 var minutes = "00";
 var seconds = "00";
 
 var interval;
 
+//initial reset of page to ensure smooth working
 reset();
 
+//starts the timer to tick down by setting an interval function
 function start(){
 
     if(minutes !=0 || seconds !=0 || hours != 0){
@@ -23,6 +27,7 @@ function start(){
 
 }
 
+//stops the timer tick-down by clearing the interval function form start()
 function stop(){
 
     clearInterval(interval);
@@ -33,6 +38,7 @@ function stop(){
 
 }
 
+//resets the HTML page to standard
 function reset(){
 
     clearInterval(interval);
@@ -51,10 +57,14 @@ function reset(){
 
 }
 
+
+//runs the timer, if it reaches 00:00:00 the alarm is played
 function timer(){
 
+    //test if a timer value is set
     if(hours != 0 || minutes != 0 || seconds != 0){
 
+        //ticks down seconds, minutes or hours
         if(seconds > 0){
 
             seconds--;
@@ -87,6 +97,7 @@ function timer(){
         }
 
     }
+    //at end of timer, alarm sound is played
     else{
 
         stop();
@@ -97,6 +108,8 @@ function timer(){
 
 }
 
+
+//imports mp3 and plays it
 function alarm() {
 
     audio = new Audio('achtarmiger.mp3');
@@ -104,6 +117,7 @@ function alarm() {
 
 }
 
+//increases the value of "hours"; checks "seconds" and "minutes" to prevent e.g. 24:60:60
 function hoursPlus() {
 
     if(minutes != 60 && seconds != 60){
@@ -135,6 +149,7 @@ function hoursPlus() {
 
 }
 
+//increases the value of "minutes"; checks "seconds" and "hours" to prevent e.g. 24:60:60
 function minutesPlus() {
 
     if(minutes < 59 && hours != 24 && seconds != 60){
@@ -162,6 +177,7 @@ function minutesPlus() {
 
 }
 
+//increases the value of "seconds"; checks "minutes" and "hours" to prevent e.g. 24:60:60
 function secondsPlus() {
 
     if(seconds < 59 && minutes != 60){
@@ -182,6 +198,7 @@ function secondsPlus() {
 
 }
 
+//similar to hoursPlus
 function hoursMinus() {
 
     if(minutes != 60 && seconds != 60){
@@ -213,6 +230,7 @@ function hoursMinus() {
 
 }
 
+//similar to minutesPlus
 function minutesMinus() {
 
     if(seconds != 60){
@@ -251,6 +269,7 @@ function minutesMinus() {
 
 }
 
+//similar to secondsPlus
 function secondsMinus() {
 
     if(seconds > 0){

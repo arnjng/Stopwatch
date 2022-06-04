@@ -120,8 +120,6 @@ function startWatch() {
     start = true;
     interval = watch();
     
-    //TODO: fade out Startbutton to ensure stable working of clock, replace button with a button without function while clock is running, when clock is stopped re-enable Startbutton
-    
 }
 
 //start the stopwatch
